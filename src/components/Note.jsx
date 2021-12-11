@@ -1,10 +1,19 @@
 import React from "react";
+import Keeper from "./Keeper";
+import keepers from "../keeper";
 
 function Note(){
     return(
-        <div className="note">
-            <h1>This is the title</h1>
-            <p>This is the content</p>
+        <div>
+            <dl >
+                {keepers.map(keeper=>(
+                    <Keeper
+                        key = {keeper.key}
+                        keeperTitle = {keeper.title}
+                        keeperContent = {keeper.content}
+                    />
+                ))}
+            </dl>
         </div>
     );
 }
