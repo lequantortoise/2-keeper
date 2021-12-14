@@ -1,19 +1,13 @@
 import React from "react";
-import Keeper from "./Keeper";
-import keepers from "../keeper";
+// import Keeper from "./Keeper";
+// import keepers from "../keeper";
 
-function Note(){
+function Note(props){
     return(
-        <div>
-            <dl >
-                {keepers.map(keeper=>(
-                    <Keeper
-                        key = {keeper.key}
-                        keeperTitle = {keeper.title}
-                        keeperContent = {keeper.content}
-                    />
-                ))}
-            </dl>
+        <div className="note">
+        <h1>{props.title}</h1>
+        <p>{props.content}</p>
+        <button onClick={()=>{props.onDeletedItem(props.id)}}>DELETE</button>
         </div>
     );
 }
